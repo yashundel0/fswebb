@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply font-sans text-neutral-700 bg-neutral-50;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .container-wide {
+    @apply max-w-7xl mx-auto px-6 lg:px-10;
+  }
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #d4a73a 0%, #e0bd5f 50%, #c2912a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-overlay {
+    background: linear-gradient(180deg,
+      rgba(10, 26, 44, 0.55) 0%,
+      rgba(10, 26, 44, 0.35) 40%,
+      rgba(10, 26, 44, 0.65) 75%,
+      rgba(10, 26, 44, 0.85) 100%);
+  }
+  .card-hover {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px rgba(10, 26, 44, 0.18);
+  }
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+  .link-underline:hover::after {
+    width: 100%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #a8a29e;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #78716c;
+}
