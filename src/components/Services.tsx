@@ -32,8 +32,6 @@ export default function Services() {
               <a
                 key={service.title}
                 href={service.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={`group relative overflow-hidden bg-white card-hover reveal ${visible ? 'visible' : ''}`}
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
